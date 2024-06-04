@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import GooglePlaces
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //Get hidden api key in scheme environment variables, the scheme is not committed to git
+        guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
+            print("Error: Google Places API_KEY key not found in environment variables")
+            return false
+        }
+        GMSPlacesClient.provideAPIKey(String(apiKey))
+
+      
         return true
     }
 

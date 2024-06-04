@@ -13,6 +13,14 @@
 		BF5AD96B2BF539B6002E37F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF5AD96A2BF539B6002E37F8 /* Base */; };
 		BF5AD96D2BF539B8002E37F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5AD96C2BF539B8002E37F8 /* Assets.xcassets */; };
 		BF5AD9702BF539B8002E37F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF5AD96F2BF539B8002E37F8 /* Base */; };
+		BF606B8E2C0E728A00ADE290 /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF606B8D2C0E728A00ADE290 /* PlacesService.swift */; };
+		BFED4E8B2BFCE4C7008D8CCF /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED4E892BFCE4C7008D8CCF /* PlaceTableViewCell.swift */; };
+		BFED4E8C2BFCE4C7008D8CCF /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFED4E8A2BFCE4C7008D8CCF /* PlaceTableViewCell.xib */; };
+		BFED4E8E2BFD1977008D8CCF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED4E8D2BFD1977008D8CCF /* MapViewController.swift */; };
+		BFED4E902BFD199A008D8CCF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED4E8F2BFD199A008D8CCF /* DetailViewController.swift */; };
+		BFED4E922BFD219F008D8CCF /* GooglePlacesPrivacy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFED4E912BFD219F008D8CCF /* GooglePlacesPrivacy.bundle */; };
+		BFED4E952BFD21CC008D8CCF /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = BFED4E942BFD21CC008D8CCF /* GooglePlaces */; };
+		BFED4E982BFF0BAD008D8CCF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED4E972BFF0BAD008D8CCF /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,13 @@
 		BF5AD96C2BF539B8002E37F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF5AD96F2BF539B8002E37F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF5AD9712BF539B8002E37F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF606B8D2C0E728A00ADE290 /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
+		BFED4E892BFCE4C7008D8CCF /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		BFED4E8A2BFCE4C7008D8CCF /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		BFED4E8D2BFD1977008D8CCF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BFED4E8F2BFD199A008D8CCF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BFED4E912BFD219F008D8CCF /* GooglePlacesPrivacy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlacesPrivacy.bundle; sourceTree = "<group>"; };
+		BFED4E972BFF0BAD008D8CCF /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFED4E952BFD21CC008D8CCF /* GooglePlaces in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,7 @@
 		BF5AD9572BF539B5002E37F8 = {
 			isa = PBXGroup;
 			children = (
+				BFED4E912BFD219F008D8CCF /* GooglePlacesPrivacy.bundle */,
 				BF5AD9622BF539B6002E37F8 /* AirCafe */,
 				BF5AD9612BF539B6002E37F8 /* Products */,
 			);
@@ -56,6 +73,7 @@
 		BF5AD9622BF539B6002E37F8 /* AirCafe */ = {
 			isa = PBXGroup;
 			children = (
+				BFED4E962BFF0B92008D8CCF /* Models */,
 				BF5AD9632BF539B6002E37F8 /* AppDelegate.swift */,
 				BF5AD9652BF539B6002E37F8 /* SceneDelegate.swift */,
 				BF5AD9672BF539B6002E37F8 /* ViewController.swift */,
@@ -63,8 +81,21 @@
 				BF5AD96C2BF539B8002E37F8 /* Assets.xcassets */,
 				BF5AD96E2BF539B8002E37F8 /* LaunchScreen.storyboard */,
 				BF5AD9712BF539B8002E37F8 /* Info.plist */,
+				BFED4E892BFCE4C7008D8CCF /* PlaceTableViewCell.swift */,
+				BFED4E8A2BFCE4C7008D8CCF /* PlaceTableViewCell.xib */,
+				BFED4E8D2BFD1977008D8CCF /* MapViewController.swift */,
+				BFED4E8F2BFD199A008D8CCF /* DetailViewController.swift */,
 			);
 			path = AirCafe;
+			sourceTree = "<group>";
+		};
+		BFED4E962BFF0B92008D8CCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFED4E972BFF0BAD008D8CCF /* Place.swift */,
+				BF606B8D2C0E728A00ADE290 /* PlacesService.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +114,9 @@
 			dependencies = (
 			);
 			name = AirCafe;
+			packageProductDependencies = (
+				BFED4E942BFD21CC008D8CCF /* GooglePlaces */,
+			);
 			productName = AirCafe;
 			productReference = BF5AD9602BF539B6002E37F8 /* AirCafe.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +145,9 @@
 				Base,
 			);
 			mainGroup = BF5AD9572BF539B5002E37F8;
+			packageReferences = (
+				BFED4E932BFD21CC008D8CCF /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
+			);
 			productRefGroup = BF5AD9612BF539B6002E37F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +165,8 @@
 				BF5AD96D2BF539B8002E37F8 /* Assets.xcassets in Resources */,
 				BF5AD9702BF539B8002E37F8 /* Base in Resources */,
 				BF5AD96B2BF539B6002E37F8 /* Base in Resources */,
+				BFED4E922BFD219F008D8CCF /* GooglePlacesPrivacy.bundle in Resources */,
+				BFED4E8C2BFCE4C7008D8CCF /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +180,11 @@
 				BF5AD9682BF539B6002E37F8 /* ViewController.swift in Sources */,
 				BF5AD9642BF539B6002E37F8 /* AppDelegate.swift in Sources */,
 				BF5AD9662BF539B6002E37F8 /* SceneDelegate.swift in Sources */,
+				BFED4E902BFD199A008D8CCF /* DetailViewController.swift in Sources */,
+				BFED4E8E2BFD1977008D8CCF /* MapViewController.swift in Sources */,
+				BFED4E982BFF0BAD008D8CCF /* Place.swift in Sources */,
+				BFED4E8B2BFCE4C7008D8CCF /* PlaceTableViewCell.swift in Sources */,
+				BF606B8E2C0E728A00ADE290 /* PlacesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFED4E932BFD21CC008D8CCF /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFED4E942BFD21CC008D8CCF /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFED4E932BFD21CC008D8CCF /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF5AD9582BF539B5002E37F8 /* Project object */;
 }
