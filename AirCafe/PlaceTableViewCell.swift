@@ -51,13 +51,33 @@ class PlaceTableViewCell: UITableViewCell {
         default:
             shownPriceLevel = "price level unknown"
         }
+        
+        if let regularOpeningHours = place.regularOpeningHours {
+            if regularOpeningHours.openNow {
+                openClosedLabel.text = "Open"
+                openClosedLabel.textColor = .green
+            } else {
+                openClosedLabel.text = "Closed"
+                openClosedLabel.textColor = .red
+            }
+        } else {
+            openClosedLabel.text = "Open/Closed status unknown"
+            openClosedLabel.textColor = .gray
+        }
+
+        if let rating = place.rating {
+            ratingLabel.text = String(rating)
+        } else {
+            ratingLabel.text = "n/a"
+
+        }
+        
         placeImageView.image = UIImage(named: "restaurant-default")
         titleLabel.text = place.displayName.text
         typeLabel.text = shownTypes.joined(separator: " | ")
-        distanceAwayLabel.text = "1 km away"
+        distanceAwayLabel.text = "less than 1 km away"
         addressLabel.text = place.formattedAddress
         priceLevelLabel.text = shownPriceLevel
-        ratingLabel.text = String(place.rating ?? 0)
         
     }
     

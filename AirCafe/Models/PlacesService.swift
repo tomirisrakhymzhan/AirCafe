@@ -55,7 +55,7 @@ class PlacesService {
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue(apiKey, forHTTPHeaderField: "X-Goog-Api-Key")
-        urlRequest.setValue("places.name,places.location,places.displayName,places.formattedAddress,places.types,places.priceLevel,places.rating", forHTTPHeaderField: "X-Goog-FieldMask")
+        urlRequest.setValue("places.name,places.location,places.displayName,places.formattedAddress,places.types,places.priceLevel,places.rating,places.regularOpeningHours.openNow,places.regularOpeningHours.weekdayDescriptions", forHTTPHeaderField: "X-Goog-FieldMask")
         urlRequest.httpBody = jsonData
 
         let session = URLSession.shared
@@ -66,18 +66,20 @@ class PlacesService {
                 return
             }
 
-            guard let data = data else {
-                print("Data is nil")
-                completion(nil)
-                return
-            }
 
-            do {
-                let result = try JSONDecoder().decode(Result.self, from: data)
-                self.data = result.places
-                completion(result.places)
-            } catch let error {
-                print("Error converting data from JSON to Swift object: \(error.localizedDescription)")
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let placesResponse = try decoder.decode(PlacesResponse.self, from: data)
+                    // Use the 'places' array here
+                    self.data = placesResponse.places
+                    completion(placesResponse.places)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(nil)
+                }
+            } else {
+                print("No data received.")
                 completion(nil)
             }
         }

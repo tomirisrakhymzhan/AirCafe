@@ -14,7 +14,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     let locationManager = CLLocationManager()
-    //private var placesClient: GMSPlacesClient!
     var dataSource = [Place]() {
         didSet {
             DispatchQueue.main.async {
@@ -29,9 +28,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: PlaceTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlaceTableViewCell.identifier)
-        
-        //placesClient = GMSPlacesClient.shared()
-
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     }
@@ -55,7 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         print("User coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
-        PlacesService.shared.fetchNearbyPlaces(numOfPlaces: 10, radius: 1000, currentLocation: location) { places in
+        PlacesService.shared.fetchNearbyPlaces(numOfPlaces: 20, radius: 5000, currentLocation: location) { places in
             if let places = places {
                 print("Fetched places: \(places)")
                 self.dataSource = places
@@ -85,5 +81,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = storyboard!
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        print(detailVC.description)
+        detailVC.place = dataSource[indexPath.row]
+        present(detailVC, animated: true, completion: nil)
     }
 }

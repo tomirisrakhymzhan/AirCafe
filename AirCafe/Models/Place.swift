@@ -6,28 +6,64 @@
 //
 
 import Foundation
-// MARK: - Welcome
-struct Result: Codable {
+struct PlacesResponse: Codable {
     let places: [Place]
 }
 
-// MARK: - Place
 struct Place: Codable {
     let name: String
     let types: [String]
     let formattedAddress: String
     let location: Location
     let rating: Double?
+    let regularOpeningHours: RegularOpeningHours?
     let priceLevel: String?
     let displayName: DisplayName
 }
 
-// MARK: - DisplayName
-struct DisplayName: Codable {
-    let text, languageCode: String
+struct Location: Codable {
+    let latitude: Double
+    let longitude: Double
 }
 
-// MARK: - Location
-struct Location: Codable {
-    let latitude, longitude: Double
+struct RegularOpeningHours: Codable {
+    let openNow: Bool
+    let weekdayDescriptions: [String]
 }
+
+struct DisplayName: Codable {
+    let text: String
+    let languageCode: String
+}
+
+//struct PlaceResponse: Codable {
+//    let places: [Place]
+//}
+//
+//// Ensure all properties in Place and its nested structs match the JSON structure
+//struct Place: Codable {
+//    let name: String
+//    let types: [String]
+//    let formattedAddress: String
+//    let location: Location
+//    let rating: Double
+//    let regularOpeningHours: RegularOpeningHours?
+//    let priceLevel: String?
+//    let displayName: DisplayName
+//}
+//
+//// Ensure all properties in nested structs match the JSON structure
+//struct Location: Codable {
+//    let latitude: Double
+//    let longitude: Double
+//}
+//
+//struct RegularOpeningHours: Codable {
+//    let openNow: Bool
+//    let weekdayDescriptions: [String]
+//}
+//
+//struct DisplayName: Codable {
+//    let text: String
+//    let languageCode: String
+//}
