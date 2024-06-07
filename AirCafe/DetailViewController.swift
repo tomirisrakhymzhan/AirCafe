@@ -97,7 +97,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         addressLabel.text = place.formattedAddress
         priceLevelLabel.text = shownPriceLevel
         //ratingLabel.text = String(place.rating ?? 0)
-        weekdayDescriptionLabel.text = place.regularOpeningHours?.weekdayDescriptions.joined(separator: "/n")
+        weekdayDescriptionLabel.text = place.regularOpeningHours?.weekdayDescriptions.joined(separator: "\n")
     }
     func createPlaceAnnotation(){
         guard let place = self.place else {
